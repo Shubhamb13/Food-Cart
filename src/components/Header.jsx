@@ -7,14 +7,14 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-md">
-      <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
+      <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
         {/* Logo */}
         <div className="flex items-center">
           <img className="h-10 sm:h-12 w-auto" src={LOGO_URL} alt="Logo" />
         </div>
 
         {/* Navigation */}
-        <nav className="flex sm:flex-row items-center sm:space-x-6 space-y-2 sm:space-y-0 p-3 sm:p-4">
+        <nav className="flex sm:flex-row items-center sm:space-x-6 space-y-2 sm:space-y-0 sm:p-4">
           <ul className="flex sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-gray-700 font-medium">
             <li className="px-2 py-1 sm:px-0 sm:py-0">
               <Link to="/" className="hover:text-blue-600 transition">

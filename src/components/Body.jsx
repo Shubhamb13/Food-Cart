@@ -17,6 +17,9 @@ const Body = () => {
       data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     let silderdata = data?.data?.cards[0]?.card?.card?.imageGridCards?.info;
 
+
+    console.log(finaldata);
+    console.log(silderdata);
     setSliderData(silderdata);
     setresLists(finaldata);
     setfilterText(finaldata);
