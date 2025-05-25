@@ -15,9 +15,10 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const data = await api.json();
+    console.log(data);
 
     let finaldata =
-      data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
     let silderdata = data?.data?.cards[0]?.card?.card?.imageGridCards?.info;
 
@@ -120,7 +121,7 @@ const Body = () => {
       <h2 className="text-2xl font-semibold mb-4 text-center md:text-left">What's on your mind?</h2>
 
       {/* Slider Section (optional, you can uncomment if needed) */}
-      {/* 
+      
       <div className="flex gap-4 overflow-x-auto py-4">
         {Sliderdata.map((res) => (
           <img
@@ -131,7 +132,7 @@ const Body = () => {
           />
         ))}
       </div>
-      */}
+     
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
         {filterText?.map((resturant) => (
