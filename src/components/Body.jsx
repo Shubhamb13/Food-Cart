@@ -12,12 +12,13 @@ const Body = () => {
 
   const fetchdata = async () => {
     const api = await fetch("./mockdata.json");
-    
+
     const data = await api.json();
     console.log(data);
 
     let finaldata =
-      data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
 
     let silderdata = data?.data?.cards[0]?.card?.card?.imageGridCards?.info;
 
@@ -117,21 +118,25 @@ const Body = () => {
         </div>
       </div>
 
-      <h2 className="text-2xl font-semibold mb-4 text-center md:text-left">What's on your mind?</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-center md:text-left">
+        What's on your mind?
+      </h2>
 
       {/* Slider Section (optional, you can uncomment if needed) */}
-      
-      <div className="flex gap-4 overflow-x-auto py-4">
-        {Sliderdata.map((res) => (
-          <img
-            key={res.id}
-            className="w-40 h-24 rounded-lg object-cover"
-            src={`https://media-assets.swiggy.com/swiggy/image/upload/${res.imageId}`}
-            alt="slider"
-          />
-        ))}
-      </div>
-     
+
+      <div className="relative w-full py-4 overflow-x-auto scrollbar-hide">
+  <div className="flex gap-4">
+    {Sliderdata.map((res) => (
+      <img
+        key={res.id}
+        className="w-auto h-38 rounded-lg object-contain flex-shrink-0 bg-white"
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/${res.imageId}`}
+        alt="slider"
+      />
+    ))}
+  </div>
+</div>
+
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
         {filterText?.map((resturant) => (
